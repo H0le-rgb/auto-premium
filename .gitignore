@@ -37,3 +37,7 @@ desktop.ini
 *.bak
 *.tmp
 *.old
+
+# Playwright artifacts
+playwright-report/
+test-results/

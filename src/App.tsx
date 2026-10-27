@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { ArrowDown, ArrowDownRight, ArrowRight, ArrowUpRight, Check, ChevronDown, Clock3, Disc3, Gauge, Instagram, MapPin, Menu, Phone, Settings2, ShieldCheck, Sparkles, Wrench, X } from 'lucide-react'
 
 // Replace these clearly marked demo details before publishing the site.
@@ -27,8 +27,13 @@ const steps = [
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [notice, setNotice] = useState(false)
+  const noticeTimer = useRef<ReturnType<typeof window.setTimeout> | undefined>(undefined)
   const closeMenu = () => setMenuOpen(false)
-  const handleBook = () => { setNotice(true); window.setTimeout(() => setNotice(false), 4500) }
+  const handleBook = () => {
+    setNotice(true)
+    if (noticeTimer.current !== undefined) window.clearTimeout(noticeTimer.current)
+    noticeTimer.current = window.setTimeout(() => setNotice(false), 4500)
+  }
   const nav = [['Услуги', '#services'], ['О нас', '#about'], ['Как работаем', '#process'], ['Контакты', '#contacts']]
 
   return <main>
