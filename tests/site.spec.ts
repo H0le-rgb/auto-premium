@@ -5,7 +5,7 @@ const widths = [320, 360, 375, 390, 430, 768, 1024, 1280, 1920]
 test('main page content, navigation targets, and links are present', async ({ page }, testInfo) => {
   const issues: string[] = []
   const externalResourceIssues: string[] = []
-  const ownOrigin = 'http://127.0.0.1:4173'
+  const ownOrigin = new URL(process.env.PLAYWRIGHT_TEST_BASE_URL ?? 'http://127.0.0.1:4173').origin
   page.on('pageerror', error => issues.push(`pageerror: ${error.message}`))
   page.on('console', message => {
     if (message.type() === 'error') {
@@ -94,26 +94,40 @@ test('mobile navigation opens and closes after following a section link', async 
   await expect(page.getByRole('button', { name: 'Открыть меню' })).toBeVisible()
 })
 
-test('about decorative years stay below the copy and above the contacts section on mobile', async ({ page }) => {
-  for (const width of [320, 360, 375, 390, 430]) {
+test('about decorative years stay below the copy and above the contacts section on small screens', async ({ page }, testInfo) => {
+  const overlaps: string[] = []
+  await page.setViewportSize({ width: 320, height: 850 })
+  await page.goto('/', { waitUntil: 'domcontentloaded' })
+  for (const width of [320, 360, 375, 390, 430, 768]) {
     await page.setViewportSize({ width, height: 850 })
-    await page.goto('/', { waitUntil: 'domcontentloaded' })
+    await page.evaluate(async () => { await document.fonts.ready })
     const copyLink = await page.getByRole('link', { name: 'Приезжайте знакомиться' }).boundingBox()
     const years = await page.locator('.about-number').boundingBox()
     const contacts = await page.locator('#contacts').boundingBox()
+    const yearPosition = await page.locator('.about-number').evaluate(element => {
+      const style = getComputedStyle(element)
+      const rect = (target: Element) => {
+        const box = target.getBoundingClientRect()
+        return `${box.top.toFixed(1)}..${box.bottom.toFixed(1)}`
+      }
+      return `${style.position}; bottom=${style.bottom}; link=${rect(element.parentElement!.querySelector('.text-link')!)}; years=${rect(element)}`
+    })
+    await page.locator('.about').screenshot({ path: testInfo.outputPath(`about-${width}.png`) })
     expect(copyLink, `about link is visible at ${width}px`).not.toBeNull()
     expect(years, `decorative years are visible at ${width}px`).not.toBeNull()
     expect(contacts, `contacts section is visible at ${width}px`).not.toBeNull()
-    expect(years!.y, `years overlap the about link at ${width}px`).toBeGreaterThanOrEqual(copyLink!.y + copyLink!.height)
-    expect(contacts!.y, `years overlap the next section at ${width}px`).toBeGreaterThanOrEqual(years!.y + years!.height)
+    if (years!.y < copyLink!.y + copyLink!.height) overlaps.push(`${width}px: years cover the copy/link (${yearPosition})`)
+    if (contacts!.y < years!.y + years!.height) overlaps.push(`${width}px: years enter the contacts section (${yearPosition})`)
   }
+  expect(overlaps, 'decorative years overlap visible content').toEqual([])
 })
 
 test('layout fits requested viewports and saves review screenshots', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'chromium', 'Responsive matrix is run in Chromium only')
+  await page.setViewportSize({ width: widths[0], height: 850 })
+  await page.goto('/', { waitUntil: 'domcontentloaded' })
   for (const width of widths) {
     await page.setViewportSize({ width, height: width < 500 ? 850 : 1000 })
-    await page.goto('/', { waitUntil: 'domcontentloaded' })
     await page.waitForTimeout(500)
     const dimensions = await page.evaluate(() => ({
       viewport: document.documentElement.clientWidth,
