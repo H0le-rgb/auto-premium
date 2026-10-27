@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+
+# Environment files and secrets
+.env
+.env.*
+!.env.example
+!.env.sample
+
+# Logs and caches
+*.log
+logs/
+.npm-cache/
+.npm/
+.cache/
+.eslintcache
+*.tsbuildinfo
+
+# Local editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Private keys and certificates
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Backups and temporary files
+*.bak
+*.tmp
+*.old
