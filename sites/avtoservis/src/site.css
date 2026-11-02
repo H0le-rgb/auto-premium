@@ -1,0 +1,11 @@
+/* Local visual direction for Автосервис; edit this file without affecting other workspaces. */
+.business-site.site-avtoservis .business-header { border-bottom-color: color-mix(in srgb, var(--accent) 24%, transparent); }
+@media (min-width: 761px) {
+  .business-site.site-avtoservis .business-hero { min-height: 614px; grid-template-columns: 1fr; }
+  .business-site.site-avtoservis .hero-visual { min-height: 614px; }
+  .business-site.site-avtoservis .visual-disc { border-radius: 50%; transform: rotate(28deg); }
+  .business-site.site-avtoservis .service-tile:nth-child(3) { border-top: 2px solid var(--accent); }
+}
+.business-site.site-avtoservis .business-hero { display: block; }
+.business-site.site-avtoservis .hero-copy { min-height: 430px; padding-right: 10.8%; }
+.business-site.site-avtoservis .hero-visual { min-height: 360px; }

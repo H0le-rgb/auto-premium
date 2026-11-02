@@ -1,0 +1,3 @@
+[build]
+command = "npm run build --workspace=@auto-premium/kardannye-valy"
+publish = "sites/kardannye-valy/dist"

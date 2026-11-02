@@ -1,0 +1,8 @@
+/* Local visual direction for Мобишин22; edit this file without affecting other workspaces. */
+.business-site.site-mobishin22 .business-header { border-bottom-color: color-mix(in srgb, var(--accent) 24%, transparent); }
+@media (min-width: 761px) {
+  .business-site.site-mobishin22 .business-hero { min-height: 570px; grid-template-columns: 1.15fr .85fr; }
+  .business-site.site-mobishin22 .hero-visual { min-height: 570px; }
+  .business-site.site-mobishin22 .visual-disc { border-radius: 50%; transform: rotate(-32deg); }
+  .business-site.site-mobishin22 .service-tile:nth-child(1) { border-top: 2px solid var(--accent); }
+}

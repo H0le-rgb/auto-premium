@@ -1,11 +1,12 @@
-export type DemoTheme = 'tire' | 'garage' | 'electric' | 'detail' | 'shaft' | 'truck' | 'tuning' | 'neutral' | 'waste'
-export type DemoBusiness = {
-  slug: string; name: string; eyebrow: string; theme: DemoTheme; headline: string; description: string
-  phones?: { label?: string; display: string; href: string }[]; services?: string[]; note?: string; accent: string; background: string
-}
+import type { DemoBusiness, DemoTheme } from '../shared/types'
+export type { DemoBusiness, DemoTheme } from '../shared/types'
 
 const phone = (display: string, label?: string) => ({ display, label, href: `tel:${display.replace(/[^+\d]/g, '')}` })
-const record = (slug: string, name: string, theme: DemoTheme, headline: string, description: string, phones: ReturnType<typeof phone>[] = [], services: string[] = [], note?: string, accent = '#f3ae32', background = '#101820'): DemoBusiness => ({ slug, name, eyebrow: 'Барнаул · демонстрационная концепция', theme, headline, description, phones, services, note, accent, background })
+const categoryByTheme: Record<DemoTheme, string> = {
+  tire: 'Шинный сервис', garage: 'Автосервис', electric: 'Автоэлектрика', detail: 'Уход за автомобилем',
+  shaft: 'Ремонт карданных валов', truck: 'Грузовой транспорт', tuning: 'Автотюнинг', neutral: 'Профиль уточняется', waste: 'Обращение с отходами',
+}
+const record = (slug: string, name: string, theme: DemoTheme, headline: string, description: string, phones: ReturnType<typeof phone>[] = [], services: string[] = [], note?: string, accent = '#f3ae32', background = '#101820'): DemoBusiness => ({ slug, name, eyebrow: 'Демонстрационная концепция', theme, headline, description, phones, services, note, accent, background, category: categoryByTheme[theme] })
 
 export const demos: DemoBusiness[] = [
  record('mobishin22','Мобишин22','tire','Шины готовы к сезону. Вы — к дороге.','Шинный сервис с записью по телефону и понятным перечнем работ.',[phone('+7 903 911-72-21'),phone('+7 960 940-77-78'),phone('+7 901 207-75-05','Запись · управляющий')],['Сезонная смена шин','Шиномонтаж','Работы с колёсами'],'Демонстрационный макет. Состав услуг и порядок записи подтвердить.','#e8a52b','#111817'),

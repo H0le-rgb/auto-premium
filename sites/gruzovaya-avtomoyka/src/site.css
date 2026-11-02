@@ -1,0 +1,8 @@
+/* Local visual direction for Грузовая автомойка и грузовой/легковой шиномонтаж; edit this file without affecting other workspaces. */
+.business-site.site-gruzovaya-avtomoyka .business-header { border-bottom-color: color-mix(in srgb, var(--accent) 24%, transparent); }
+@media (min-width: 761px) {
+  .business-site.site-gruzovaya-avtomoyka .business-hero { min-height: 592px; grid-template-columns: 1.02fr .98fr; }
+  .business-site.site-gruzovaya-avtomoyka .hero-visual { min-height: 592px; }
+  .business-site.site-gruzovaya-avtomoyka .visual-disc { border-radius: 12%; transform: rotate(43deg); }
+  .business-site.site-gruzovaya-avtomoyka .service-tile:nth-child(2) { border-top: 2px solid var(--accent); }
+}

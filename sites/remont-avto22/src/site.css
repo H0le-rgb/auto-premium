@@ -1,0 +1,8 @@
+/* Local visual direction for Ремонт Авто22; edit this file without affecting other workspaces. */
+.business-site.site-remont-avto22 .business-header { border-bottom-color: color-mix(in srgb, var(--accent) 24%, transparent); }
+@media (min-width: 761px) {
+  .business-site.site-remont-avto22 .business-hero { min-height: 680px; grid-template-columns: 1fr .86fr; }
+  .business-site.site-remont-avto22 .hero-visual { min-height: 680px; }
+  .business-site.site-remont-avto22 .visual-disc { border-radius: 50%; transform: rotate(19deg); }
+  .business-site.site-remont-avto22 .service-tile:nth-child(3) { border-top: 2px solid var(--accent); }
+}

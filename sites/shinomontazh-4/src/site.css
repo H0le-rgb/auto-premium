@@ -1,0 +1,8 @@
+/* Local visual direction for Шиномонтажная мастерская №4; edit this file without affecting other workspaces. */
+.business-site.site-shinomontazh-4 .business-header { border-bottom-color: color-mix(in srgb, var(--accent) 24%, transparent); }
+@media (min-width: 761px) {
+  .business-site.site-shinomontazh-4 .business-hero { min-height: 592px; grid-template-columns: .88fr 1.12fr; }
+  .business-site.site-shinomontazh-4 .hero-visual { min-height: 592px; }
+  .business-site.site-shinomontazh-4 .visual-disc { border-radius: 12%; transform: rotate(25deg); }
+  .business-site.site-shinomontazh-4 .service-tile:nth-child(2) { border-top: 2px solid var(--accent); }
+}

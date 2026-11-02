@@ -1,0 +1,8 @@
+/* Local visual direction for Отдел ремонта карданных валов; edit this file without affecting other workspaces. */
+.business-site.site-kardannye-valy .business-header { border-bottom-color: color-mix(in srgb, var(--accent) 24%, transparent); }
+@media (min-width: 761px) {
+  .business-site.site-kardannye-valy .business-hero { min-height: 680px; grid-template-columns: 1.02fr .98fr; }
+  .business-site.site-kardannye-valy .hero-visual { min-height: 680px; }
+  .business-site.site-kardannye-valy .visual-disc { border-radius: 12%; transform: rotate(-17deg); }
+  .business-site.site-kardannye-valy .service-tile:nth-child(3) { border-top: 2px solid var(--accent); }
+}

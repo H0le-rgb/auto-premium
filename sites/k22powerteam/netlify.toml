@@ -1,0 +1,3 @@
+[build]
+command = "npm run build --workspace=@auto-premium/k22powerteam"
+publish = "sites/k22powerteam/dist"

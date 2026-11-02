@@ -1,0 +1,6 @@
+[build]
+command = "npm run build --workspace=@auto-premium/garage"
+publish = "garage/dist"
+
+[build.environment]
+NODE_VERSION = "20"

@@ -1,0 +1,3 @@
+[build]
+command = "npm run build --workspace=@auto-premium/remont-avto22"
+publish = "sites/remont-avto22/dist"

@@ -1,0 +1,3 @@
+[build]
+command = "npm run build --workspace=@auto-premium/mobishin22"
+publish = "sites/mobishin22/dist"

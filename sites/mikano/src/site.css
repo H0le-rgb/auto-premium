@@ -1,0 +1,10 @@
+/* Local visual direction for Микано; edit this file without affecting other workspaces. */
+.business-site.site-mikano .business-header { border-bottom-color: color-mix(in srgb, var(--accent) 24%, transparent); }
+@media (min-width: 761px) {
+  .business-site.site-mikano .business-hero { min-height: 636px; grid-template-columns: .82fr 1.18fr; }
+  .business-site.site-mikano .hero-visual { min-height: 636px; }
+  .business-site.site-mikano .visual-disc { border-radius: 50%; transform: rotate(-23deg); }
+  .business-site.site-mikano .service-tile:nth-child(1) { border-top: 2px solid var(--accent); }
+}
+.business-site.site-mikano .hero-copy { order: 2; padding-left: 6%; padding-right: 10.8%; }
+.business-site.site-mikano .hero-visual { order: 1; }

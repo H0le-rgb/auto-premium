@@ -1,0 +1,3 @@
+[build]
+command = "npm run build --workspace=@auto-premium/genstart"
+publish = "sites/genstart/dist"

@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.app.json",
+  "include": [
+    "src",
+    "../../shared"
+  ],
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/racetech.tsbuildinfo"
+  }
+}

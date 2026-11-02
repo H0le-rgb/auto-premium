@@ -1,0 +1,3 @@
+[build]
+command = "npm run build --workspace=@auto-premium/shinomontazh-3"
+publish = "sites/shinomontazh-3/dist"

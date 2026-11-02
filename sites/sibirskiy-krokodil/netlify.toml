@@ -1,0 +1,3 @@
+[build]
+command = "npm run build --workspace=@auto-premium/sibirskiy-krokodil"
+publish = "sites/sibirskiy-krokodil/dist"

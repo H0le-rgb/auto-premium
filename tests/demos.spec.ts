@@ -51,6 +51,7 @@ test('internal catalog lists all 27 separate previews', async ({ page }) => {
 for (const [slug, name, expectedPhones] of routes) {
   test(`${slug} opens directly with its own contact data`, async ({ page }) => {
     await page.goto(`/demo/${slug}`, { waitUntil: 'domcontentloaded' })
+    await expect.poll(() => page.evaluate(() => document.styleSheets.length), { message: 'demo stylesheet is loaded' }).toBeGreaterThan(0)
     await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
     await expect(page.locator('.business-logo').first()).toContainText(name)
     if (expectedPhones.length) {
@@ -83,6 +84,7 @@ test('all demos fit mobile and desktop sizes without overlap and keep the CTA vi
   const sizes = [{ width: 375, height: 812 }, { width: 390, height: 844 }, { width: 1440, height: 900 }]
   for (const [slug] of routes) {
     await page.goto(`/demo/${slug}`, { waitUntil: 'domcontentloaded' })
+    await expect.poll(() => page.evaluate(() => document.styleSheets.length), { message: 'demo stylesheet is loaded' }).toBeGreaterThan(0)
     for (const size of sizes) {
       await page.setViewportSize(size)
       await expect(page.getByRole('heading', { level: 1 })).toBeVisible()

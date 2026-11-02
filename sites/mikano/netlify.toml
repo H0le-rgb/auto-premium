@@ -1,0 +1,3 @@
+[build]
+command = "npm run build --workspace=@auto-premium/mikano"
+publish = "sites/mikano/dist"

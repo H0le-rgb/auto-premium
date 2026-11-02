@@ -1,0 +1,8 @@
+/* Local visual direction for Лемакс; edit this file without affecting other workspaces. */
+.business-site.site-lemaks .business-header { border-bottom-color: color-mix(in srgb, var(--accent) 24%, transparent); }
+@media (min-width: 761px) {
+  .business-site.site-lemaks .business-hero { min-height: 636px; grid-template-columns: 1.05fr .95fr; }
+  .business-site.site-lemaks .hero-visual { min-height: 636px; }
+  .business-site.site-lemaks .visual-disc { border-radius: 50%; transform: rotate(13deg); }
+  .business-site.site-lemaks .service-tile:nth-child(1) { border-top: 2px solid var(--accent); }
+}

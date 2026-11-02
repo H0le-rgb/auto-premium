@@ -1,0 +1,10 @@
+/* Local visual direction for Шиномонтажная мастерская №2; edit this file without affecting other workspaces. */
+.business-site.site-shinomontazh-2 .business-header { border-bottom-color: color-mix(in srgb, var(--accent) 24%, transparent); }
+@media (min-width: 761px) {
+  .business-site.site-shinomontazh-2 .business-hero { min-height: 658px; grid-template-columns: .82fr 1.18fr; }
+  .business-site.site-shinomontazh-2 .hero-visual { min-height: 658px; }
+  .business-site.site-shinomontazh-2 .visual-disc { border-radius: 50%; transform: rotate(16deg); }
+  .business-site.site-shinomontazh-2 .service-tile:nth-child(2) { border-top: 2px solid var(--accent); }
+}
+.business-site.site-shinomontazh-2 .hero-copy { order: 2; padding-left: 6%; padding-right: 10.8%; }
+.business-site.site-shinomontazh-2 .hero-visual { order: 1; }

@@ -1,0 +1,8 @@
+/* Local visual direction for Автоэлектрик; edit this file without affecting other workspaces. */
+.business-site.site-avtoelektrik .business-header { border-bottom-color: color-mix(in srgb, var(--accent) 24%, transparent); }
+@media (min-width: 761px) {
+  .business-site.site-avtoelektrik .business-hero { min-height: 636px; grid-template-columns: 1fr .8fr; }
+  .business-site.site-avtoelektrik .hero-visual { min-height: 636px; }
+  .business-site.site-avtoelektrik .visual-disc { border-radius: 50%; transform: rotate(-5deg); }
+  .business-site.site-avtoelektrik .service-tile:nth-child(1) { border-top: 2px solid var(--accent); }
+}

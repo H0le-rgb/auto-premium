@@ -1,0 +1,8 @@
+/* Local visual direction for У дороги; edit this file without affecting other workspaces. */
+.business-site.site-u-dorogi .business-header { border-bottom-color: color-mix(in srgb, var(--accent) 24%, transparent); }
+@media (min-width: 761px) {
+  .business-site.site-u-dorogi .business-hero { min-height: 570px; grid-template-columns: .9fr 1.1fr; }
+  .business-site.site-u-dorogi .hero-visual { min-height: 570px; }
+  .business-site.site-u-dorogi .visual-disc { border-radius: 50%; transform: rotate(4deg); }
+  .business-site.site-u-dorogi .service-tile:nth-child(1) { border-top: 2px solid var(--accent); }
+}

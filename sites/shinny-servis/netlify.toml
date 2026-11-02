@@ -1,0 +1,3 @@
+[build]
+command = "npm run build --workspace=@auto-premium/shinny-servis"
+publish = "sites/shinny-servis/dist"

@@ -1,0 +1,11 @@
+/* Local visual direction for Автомагнат; edit this file without affecting other workspaces. */
+.business-site.site-avtomagnat .business-header { border-bottom-color: color-mix(in srgb, var(--accent) 24%, transparent); }
+@media (min-width: 761px) {
+  .business-site.site-avtomagnat .business-hero { min-height: 680px; grid-template-columns: 1fr; }
+  .business-site.site-avtomagnat .hero-visual { min-height: 680px; }
+  .business-site.site-avtomagnat .visual-disc { border-radius: 50%; transform: rotate(37deg); }
+  .business-site.site-avtomagnat .service-tile:nth-child(3) { border-top: 2px solid var(--accent); }
+}
+.business-site.site-avtomagnat .business-hero { display: block; }
+.business-site.site-avtomagnat .hero-copy { width: 64%; min-height: 680px; }
+.business-site.site-avtomagnat .hero-visual { position: absolute; inset: 0 0 0 36%; }

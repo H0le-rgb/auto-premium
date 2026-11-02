@@ -11,7 +11,9 @@
     "test:e2e:ui": "npm run build && playwright test --ui --project=chromium --project=webkit",
     "test:e2e:chromium": "npm run build && playwright test --project=chromium",
     "test:e2e:webkit": "npm run build && playwright test --project=webkit",
-    "test:e2e:firefox": "npm run build && playwright test --project=firefox"
+    "test:e2e:firefox": "npm run build && playwright test --project=firefox",
+    "build:all-sites": "npm run build --workspaces --if-present",
+    "verify:sites": "node scripts/verify-sites.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",
@@ -28,5 +30,9 @@
     "tailwindcss": "^3.4.17",
     "typescript": "~5.7.2",
     "vite": "^6.0.5"
-  }
+  },
+  "workspaces": [
+    "garage",
+    "sites/*"
+  ]
 }

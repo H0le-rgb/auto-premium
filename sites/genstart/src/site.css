@@ -1,0 +1,8 @@
+/* Local visual direction for ГенСтарт; edit this file without affecting other workspaces. */
+.business-site.site-genstart .business-header { border-bottom-color: color-mix(in srgb, var(--accent) 24%, transparent); }
+@media (min-width: 761px) {
+  .business-site.site-genstart .business-hero { min-height: 592px; grid-template-columns: .95fr 1.05fr; }
+  .business-site.site-genstart .hero-visual { min-height: 592px; }
+  .business-site.site-genstart .visual-disc { border-radius: 50%; transform: rotate(-11deg); }
+  .business-site.site-genstart .service-tile:nth-child(2) { border-top: 2px solid var(--accent); }
+}
